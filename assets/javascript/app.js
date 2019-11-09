@@ -9,5 +9,9 @@ $( "#search-form" ).submit(function( event ) {
     event.preventDefault();
     const value = document.getElementById('textarea1').value
     console.log(value);
-    //call api here
+    $('#search-form')[0].reset();
+    //call api here 
+
+
+
   });
