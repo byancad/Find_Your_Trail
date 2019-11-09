@@ -10,8 +10,14 @@ $( "#search-form" ).submit(function( event ) {
     const value = document.getElementById('textarea1').value
     console.log(value);
     $('#search-form')[0].reset();
-    //call api here 
-
-
+    let queryUrl ="https://developer.nps.gov/api/v1/parks?stateCode=" + value + "&api_key=idUsp6hPTKkQWBpcVGAqTDtC3kb2vG1HhrCpt8lW"; 
+    $.ajax({
+        url: queryUrl,
+        method: "GET"
+    }).then(function(response){
+        console.log(response)
+        console.log(response.data.fullName)
+    })
 
   });
+
