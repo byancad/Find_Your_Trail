@@ -25,22 +25,3 @@ $( "#search-form" ).submit(function( event ) {
 });
 
 
-$.getJSON('https://developer.nps.gov/api/v1/parks?stateCode=&api_key=a3wuSw2Td9o5F68gcq0f7e4Q8HzlBztPwFUaHzZ5', function(data){
-console.log(data);
-
-$.each(data, function(index, value){
-console.log(value);
-
-// var name = value.data.fullName
-// console.log(name);
-var desc = value.data.description
-console.log(desc);
-var weather = value.data.weather
-console.log(weather);
-
-
-
-
-});
-
-});
