@@ -4,45 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Find Bands Near You</title>
+    <title>Find Your Trail</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+  <style>body {
+    background-color: rgb(59, 80, 124);
+  }
+    </style>
  
     <div class="row">
         <form id="search-form" class="col s12">
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s3">
               <input id="textarea1" type='text' class="materialize-textarea"></input>
-              <label for="textarea1">Search City</label>
+              <label style="color:black;" for="textarea1">Search State (XX)</label>
             </div>
           </div>
         </form>
       </div> 
       <br>
+      <div class="row" id="test2"></div>
+      
+      <br>
       <div class="card mb-4">
         <div class="card-header"></div>
         <div class="card-body">
-          <table class="table table-sm table-hover" id='employeeTable'>
+          <table class="responsive-table" class="highlight" id='employeeTable'>
+            
             <thead>
               <tr>
                 <th scope="col">Park Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Weather</th>
                 <th scope="col">Official Website</th>
+                <th scope="col">Lat</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <p class="flow-text"></p></td>
+                <td>
+                    <p class="flow-text"></p></td>
+                <td>
+                    <p class="flow-text"></p></td>
+                <td>
+                    <p class="flow-text"></p></td>
+                <td>
+                    <p class="flow-text"></p></td>
               </tr>
             </tbody>
           </table>
