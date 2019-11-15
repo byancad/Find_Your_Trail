@@ -64,7 +64,7 @@ $( "#search-form" ).submit(function( event ) {
                 var columnDiv = $("<div>").addClass("col s12 float: center")
                 //$("#test2").append(columnDiv)
               var trailParkDiv = $("<div>");
-              trailParkDiv.addClass("card blue-grey darken-1 opacity: 80%")
+              trailParkDiv.addClass("card blue-grey darken-1")
               var trailParkCard = $("<div>")
               trailParkCard.addClass("card-content white-text")
               var h2Four = $("<h5>");
