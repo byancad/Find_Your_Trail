@@ -19,19 +19,27 @@ $( "#search-form" ).submit(function( event ) {
           pOne.text(results[i].description);
           var pTwo = $("<td>");
           pTwo.text(results[i].weatherInfo);
-          var pThree = $("<td>");
+          var pThree = $("<a>");
           pThree.text(results[i].url);
           pThree.addClass("webSite");
+          pThree.attr("href", results[i].url);
           var pFour = $("<td>");
           pFour.attr("latLong", results[i].latLong)
           pFour.text("Trails! Click Here!");
           pFour.addClass("park");
+
+          if (results[i].latLong === "") {
+            pFour.text("No trail info available")
+          }
+          else {pFour.text("Trails! Click Here!")};
+
           natParkDiv.append(hThree);
           natParkDiv.append(pOne);
           natParkDiv.append(pTwo);
           natParkDiv.append(pThree);
           natParkDiv.append(pFour);
           $("tbody").prepend(natParkDiv);
+
        };
        $(".park").on("click", function() {
 
@@ -59,12 +67,27 @@ $( "#search-form" ).submit(function( event ) {
       
               console.log(response);
               results2 = response.data;
+
+              if (!results2.length) {
+                var column1Div = $("<div>").addClass("col s12 float: center")
+                //$("#test2").append(columnDiv)
+              var trailPark1Div = $("<div>");
+              trailPark1Div.addClass("card blue-grey darken-1 opacity: 80%")
+              var trailPark1Card = $("<div>")
+              trailPark1Card.addClass("card-content white-text")
+              var h1Four = $("<h5>");
+              h1Four.text("No parks within a 50 mile radius :(");
+              trailPark1Card.append(h1Four);
+              trailPark1Div.append(trailPark1Card)
+              column1Div.append(trailPark1Div)
+              $("#test2").prepend(column1Div);
+              }
       
               for (var i = 0; i < results2.length; i++) {
                 var columnDiv = $("<div>").addClass("col s12 float: center")
                 //$("#test2").append(columnDiv)
               var trailParkDiv = $("<div>");
-              trailParkDiv.addClass("card blue-grey darken-1 opacity: 80%")
+              trailParkDiv.addClass("card blue-grey darken-1")
               var trailParkCard = $("<div>")
               trailParkCard.addClass("card-content white-text")
               var h2Four = $("<h5>");
@@ -80,16 +103,13 @@ $( "#search-form" ).submit(function( event ) {
               columnDiv.append(trailParkDiv)
               $("#test2").prepend(columnDiv);
               };
+              $("#test2").prepend("<h4>Trails:" + results2.length + "</h4>")
           });
+         
        
-  })
-  $(".webSite").on("click", function(){
-   
-    var a = $('<a />');
-      a.attr('href',pThree)
-      a.text(pThree);
-      console.log(this)
-  })
+  }) 
+  
+  
   //Make section to display Name- alt name- and decription for click here
   //display it on top of park info
   
