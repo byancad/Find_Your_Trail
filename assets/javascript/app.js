@@ -25,13 +25,13 @@ $( "#search-form" ).submit(function( event ) {
           pThree.attr("href", results[i].url);
           var pFour = $("<td>");
           pFour.attr("latLong", results[i].latLong)
-          pFour.text("Trails! Click Here!");
+          pFour.text("Trails within a 50 mi radius! Click Here!");
           pFour.addClass("park");
 
           if (results[i].latLong === "") {
             pFour.text("No trail info available")
           }
-          else {pFour.text("Trails! Click Here!")};
+          else {pFour.text("Trails within a 50 mi radius! Click Here!")};
 
           natParkDiv.append(hThree);
           natParkDiv.append(pOne);
